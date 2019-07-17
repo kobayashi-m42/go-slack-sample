@@ -22,12 +22,10 @@ WEBHOOK_URL=https://hooks.slack.com/services/… // 上記で取得したWebhook
 docker-compose up --build -d
 ```
 
-
 ### 2回目以降の起動
 ```
 docker-compose up
 ```
-
 
 `docker-compose.yml`の`command`で指定している`from, docker`がSlackに送信されます。
 
