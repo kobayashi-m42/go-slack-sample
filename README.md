@@ -45,3 +45,11 @@ export WEBHOOK_URL=https://hooks.slack.com/services/… // 上記で取得した
 ```
 $ go run main.go message
 ```
+
+## 本番環境での実行
+実行時に環境変数の設定ファイルを指定する必要があります。
+
+```
+docker build -t go-slack-sample .
+docker run -d --env-file ./.env --name go-slack-sample go-slack-sample
+```

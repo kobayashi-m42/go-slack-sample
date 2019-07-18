@@ -16,8 +16,9 @@ WORKDIR /app
 COPY --from=build /go/app/go-slack-sample .
 
 RUN set -x && \
+  apk add --no-cache ca-certificates && \
   addgroup go && \
   adduser -D -G go go && \
   chown -R go:go /app/go-slack-sample
 
-CMD ["./go-slack-sample"]
+CMD ["./go-slack-sample", "message"]
